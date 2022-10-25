@@ -16,17 +16,17 @@ int main(int argc, char *argv[]) {
 	
 	char *servIP = argv(1]; // First Arg: server IP address (dotted quad) 
 	
-	in_port_t servPort = atoi(argv(2]); 
+	in_port_t servPort = atoi(argv[2]); 
 	
 	// Create a reliable, stream socket using TCP 
-	int sock = socket(AF_INET, SOCK STREAM, IPPROTO_TCP); 
+	int sock = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP); 
 	if (sock < 0) 
 		DieWithSystemMessage("socket() failed"); 
 	
 	// Construct the server address structure 
 	struct sockaddr_in servAddr; 			// Server address 
-	memset(&servAddr, , sizeof(servAddr)); 	// Zero out structure 
-	servAddr.sin family = AF_INET; 		// IPv4 address family 
+	memset(&servAddr, 0, sizeof(servAddr)); 	// Zero out structure 
+	servAddr.sin_family = AF_INET; 		// IPv4 address family 
 	
 	// Convert address 
 	int rtnVal = inet_pton(AF_INET, servIP, &servAddr.sin_addr.s_addr); 
