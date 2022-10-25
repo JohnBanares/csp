@@ -14,7 +14,7 @@ int main(int argc, char *argv[]) {
 	if (argc < 3) // Test for correct number of arguments 
 		DieWithUserMessage("Parameter(s)", "<Server Address> <Server Port>"); 
 	
-	char *servIP = argv(1]; // First Arg: server IP address (dotted quad) 
+	char *servIP = argv[1]; // First Arg: server IP address (dotted quad) 
 	
 	in_port_t servPort = atoi(argv[2]); 
 	
@@ -41,7 +41,7 @@ int main(int argc, char *argv[]) {
 	if (connect(sock, (struct sockaddr *) &servAddr, sizeof(servAddr)) < 0) 
 		DieWithSystemMessage("connect() failed"); 
 	while ((numBytes = recv(sock, recvbuffer, BUFSIZE - 1, 0)) > 0) {
-			recvbuffer[numBytes] '\0'; // Terminate the string! 
+			recvbuffer[numBytes] = '\0'; // Terminate the string! 
 			fputs(recvbuffer, stdout); // Print the echo buffer 
 		/* Receive up to the buffer size (minus 1 to leave space for a null terminator) bytes from the sender */ 
 	} 
