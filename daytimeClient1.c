@@ -24,7 +24,7 @@ int main(int argc, char *argv[]) {
 		DieWithSystemMessage("socket() failed"); 
 	
 	// Construct the server address structure 
-	struct sockaddr in servAddr; 			// Server address 
+	struct sockaddr_in servAddr; 			// Server address 
 	memset(&servAddr, , sizeof(servAddr)); 	// Zero out structure 
 	servAddr.sin family = AF_INET; 		// IPv4 address family 
 	
