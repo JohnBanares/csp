@@ -26,7 +26,7 @@ int main(int argc, char *argv[]) {
 	// Construct the server address structure 
 	struct sockaddr in servAddr; 			// Server address 
 	memset(&servAddr, , sizeof(servAddr)); 	// Zero out structure 
-	servAddr.sin family = AF INET; 		// IPv4 address family 
+	servAddr.sin family = AF_INET; 		// IPv4 address family 
 	
 	// Convert address 
 	int rtnVal = inet_pton(AF_INET, servIP, &servAddr.sin_addr.s_addr); 
